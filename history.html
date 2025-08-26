@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code History</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        
+        <h1>QR Code History</h1>
+        <p class="subtitle">Your saved QR codes</p>
+        <p class="version">v0.1pr(Alpha)</p>
+        
+        <div class="history-controls">
+            <button id="import-history-btn" class="import-btn">Import History</button>
+            <button id="export-history-btn" class="export-btn">Export History</button>
+            <button id="clear-history-btn" class="clear-btn">Clear History</button>
+        </div>
+        
+        <!-- Hidden file input for import -->
+        <input type="file" id="import-file" accept=".json" style="display: none;">
+        
+        <div id="history-list" class="history-list">
+            <!-- History items will be populated here -->
+        </div>
+        
+        <div id="empty-history" class="empty-history" style="display: none;">
+            <p>No saved QR codes found.</p>
+            <a href="index.html" class="back-btn">Generate QR Code</a>
+        </div>
+        
+        <div class="additional-actions">
+            <a href="index.html" class="back-btn">Generate QR Code</a>
+            <a href="scanner.html" class="scanner-link">Scan QR Code</a>
+        </div>
+    </div>
+    
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit QR Code</h2>
+            <div class="form-group">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" placeholder="Enter a name for this QR code">
+            </div>
+            <div class="form-group">
+                <label for="edit-notes">Notes:</label>
+                <textarea id="edit-notes" placeholder="Add any notes about this QR code"></textarea>
+            </div>
+            <button id="save-edit-btn" class="save-btn">Save</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="history.js"></script>
+</body>
+</html>

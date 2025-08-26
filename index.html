@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        
+        <h1>QR Code Generator</h1>
+        <p class="subtitle">Create custom QR codes for UPI payments or website links</p>
+        <p class="version">v0.1pr(Alpha)</p>
+        
+        <div class="qr-type-selector">
+            <div class="type-option active" data-type="upi">UPI Payment</div>
+            <div class="type-option" data-type="link">Website Link</div>
+        </div>
+
+        <div class="form">
+            <div id="upi-inputs">
+                <input type="text" id="upi-id" placeholder="Enter UPI ID (e.g. username@upi)">
+                <input type="number" id="amount" placeholder="Enter Amount (Optional)">
+            </div>
+            <div id="link-inputs" style="display: none;">
+                <input type="text" id="website-link" placeholder="Enter Website Link (e.g. https://example.com)">
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <label for="logo-upload">Logo</label>
+                    <label for="logo-upload" class="file-label">Upload Logo</label>
+                    <input type="file" id="logo-upload" accept="image/*">
+                    <span id="file-name">No file chosen</span>
+                </div>
+                <div class="option-card">
+                    <label for="dot-color">Dot Color</label>
+                    <input type="color" id="dot-color" value="#000000">
+                </div>
+                <div class="option-card">
+                    <label for="bg-color">Background</label>
+                    <input type="color" id="bg-color" value="#ffffff">
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <h3>Preview</h3>
+                <div id="qr-preview"></div>
+            </div>
+
+            <button id="generate-btn">Generate QR Code</button>
+        </div>
+        
+        <div class="additional-actions">
+            <a href="scanner.html" class="scanner-link">Scan QR Code</a>
+            <a href="history.html" class="history-link">View History</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="qr.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        
+        <h1>Scan the QR Code</h1>
+        <p class="subtitle">Your QR code is ready to use</p>
+        <p class="version">v0.1pr(Alpha)</p>
+        <div id="qr-code"></div>
+        <div id="data-display" class="data-display">
+            <div class="data-display-label">Encoded Data:</div>
+            <div id="encoded-data"></div>
+        </div>
+        <div class="actions">
+            <a href="#" id="download-btn" class="action-btn">Download</a>
+            <a href="#" id="print-btn" class="action-btn">Print</a>
+            <a href="#" id="share-btn" class="action-btn">Share</a>
+            <a href="#" id="save-btn" class="action-btn">Save to History</a>
+            <a href="#" id="pay-btn" class="action-btn" style="display: none;">Pay with UPI</a>
+            <a href="#" id="simulate-scan-btn" class="action-btn" style="display: none;">Visit Link</a>
+        </div>
+        <div class="additional-actions">
+            <a href="scanner.html" class="scanner-link">Scan QR Code</a>
+            <a href="history.html" class="history-link">View History</a>
+            <a href="index.html" class="back-btn">Generate Another</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="qr.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="scanner.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        
+        <h1>QR Code Scanner</h1>
+        <p class="subtitle">Scan QR codes using your camera</p>
+        <p class="version">v0.1pr(Alpha)</p>
+        
+        <div class="scanner-container">
+            <div id="camera-feed-container">
+                <video id="camera-feed" autoplay playsinline></video>
+                <canvas id="scanner-canvas" style="display: none;"></canvas>
+                <div id="scan-overlay">
+                    <div class="scan-line"></div>
+                </div>
+                <div id="camera-placeholder">
+                    <p>Camera feed will appear here</p>
+                </div>
+            </div>
+            
+            <div id="result-container" class="result-container" style="display: none;">
+                <div class="result-content">
+                    <h3>Scanned Content:</h3>
+                    <div id="scanned-data" class="scanned-data"></div>
+                    <div class="result-actions">
+                        <button id="copy-btn" class="action-btn">Copy</button>
+                        <button id="open-btn" class="action-btn">Open</button>
+                        <button id="scan-again-btn" class="action-btn secondary">Scan Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-camera-btn" class="primary-btn">Start Camera</button>
+            <button id="stop-camera-btn" class="secondary-btn" style="display: none;">Stop Camera</button>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        
+        <div class="additional-actions">
+            <a href="index.html" class="back-btn">Generate QR Code</a>
+            <a href="history.html" class="history-link">View History</a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="scanner.js"></script>
+</body>
+</html>
